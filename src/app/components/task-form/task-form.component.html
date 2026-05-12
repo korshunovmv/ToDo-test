@@ -1,0 +1,30 @@
+<form class="task-form" (ngSubmit)="submit()">
+  <div class="fields">
+    <label class="sr-only" for="task-title">Название</label>
+    <input
+      id="task-title"
+      #titleInput
+      name="title"
+      type="text"
+      placeholder="Название задачи"
+      [(ngModel)]="title"
+    />
+    <label class="date-label" for="task-planned-date">Плановая дата</label>
+    <input
+      id="task-planned-date"
+      name="plannedDate"
+      type="date"
+      [(ngModel)]="plannedDate"
+    />
+    <label class="desc-label" for="task-description">Описание (необязательно)</label>
+    <textarea
+      id="task-description"
+      name="description"
+      rows="4"
+      placeholder="Краткое описание задачи"
+      [(ngModel)]="description"
+    ></textarea>
+  </div>
+  <button type="submit">Добавить</button>
+</form>
+<p class="error" *ngIf="error">{{ error }}</p>

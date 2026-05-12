@@ -1,0 +1,38 @@
+<section class="page">
+  <div class="page-header">
+    <h1>Задачи</h1>
+    <button type="button" (click)="openCreateModal()">Новая задача</button>
+  </div>
+
+  <div class="search-row">
+    <input
+      type="text"
+      placeholder="Поиск по title"
+      (input)="onSearch($any($event.target).value)"
+    />
+    <button type="button" (click)="clearCompleted()">Очистить выполненные</button>
+  </div>
+
+  <app-filters [activeFilter]="filter" (filterChange)="onFilterChange($event)"></app-filters>
+  <app-stats [total]="totalCount" [active]="activeCount" [completed]="completedCount"></app-stats>
+
+  <app-task-list
+    [tasks]="filteredTasks"
+    (toggleTask)="onToggleTask($event)"
+    (deleteTask)="onDeleteTask($event)"
+  ></app-task-list>
+</section>
+
+<div
+  class="modal-backdrop"
+  *ngIf="isCreateModalOpen"
+  (click)="closeCreateModal()"
+>
+  <section class="modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Новая задача</h2>
+      <button type="button" (click)="closeCreateModal()">Закрыть</button>
+    </div>
+    <app-task-form (addTask)="onAddTask($event)"></app-task-form>
+  </section>
+</div>

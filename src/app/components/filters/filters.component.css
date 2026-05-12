@@ -1,0 +1,10 @@
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.active {
+  background: #1f6feb;
+  color: #fff;
+}

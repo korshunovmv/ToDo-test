@@ -1,0 +1,18 @@
+<article class="task-item" [class.overdue]="overdue">
+  <label>
+    <input
+      type="checkbox"
+      [checked]="task.done"
+      (change)="toggleTask.emit(task.id)"
+    />
+    <span [class.done]="task.done">{{ task.title }}</span>
+    <span class="planned-date" *ngIf="task.plannedDate">
+      до {{ task.plannedDate }}
+    </span>
+  </label>
+
+  <div class="actions">
+    <a [routerLink]="['/tasks', task.id]">Детали</a>
+    <button type="button" (click)="deleteTask.emit(task.id)">Удалить</button>
+  </div>
+</article>

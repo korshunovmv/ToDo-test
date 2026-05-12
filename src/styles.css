@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f8fa;
+  color: #222;
+}
+
+button {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font: inherit;
+}

@@ -1,0 +1,28 @@
+.header {
+  background: #1f6feb;
+  color: #fff;
+}
+
+.header-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+}
+
+a {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+a.active {
+  text-decoration: underline;
+}

@@ -1,0 +1,24 @@
+<section class="page" *ngIf="task; else notFound">
+  <h1>{{ task.title }}</h1>
+  <p>Создана: {{ task.createdAt | date: 'dd.MM.yyyy HH:mm' }}</p>
+  <p *ngIf="task.plannedDate">Плановая дата: {{ task.plannedDate }}</p>
+  <p>Статус: {{ task.done ? 'Выполнена' : 'Активная' }}</p>
+
+  <label for="description">Описание</label>
+  <textarea
+    id="description"
+    rows="6"
+    [(ngModel)]="description"
+    placeholder="Добавьте описание"
+  ></textarea>
+  <button type="button" (click)="saveDescription()">Сохранить</button>
+
+  <a routerLink="/tasks">Назад к списку</a>
+</section>
+
+<ng-template #notFound>
+  <section class="page">
+    <h2>Задача не найдена</h2>
+    <a routerLink="/tasks">Назад к списку</a>
+  </section>
+</ng-template>

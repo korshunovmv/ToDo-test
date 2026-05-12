@@ -1,0 +1,11 @@
+<div class="filters">
+  <button type="button" [class.active]="activeFilter === 'all'" (click)="filterChange.emit('all')">
+    Все
+  </button>
+  <button type="button" [class.active]="activeFilter === 'active'" (click)="filterChange.emit('active')">
+    Активные
+  </button>
+  <button type="button" [class.active]="activeFilter === 'completed'" (click)="filterChange.emit('completed')">
+    Выполненные
+  </button>
+</div>
