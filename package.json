@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "github-build": "ng build --configuration production --base-href 'https://korshunovmv.github.io/ToDo-build/'",
+    "github-build": "ng build --configuration production --base-href 'https://korshunovmv.github.io/ToDo-test/'",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/todo-app/ --no-silent"
   },
   "private": true,
